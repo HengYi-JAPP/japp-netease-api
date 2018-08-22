@@ -1,0 +1,57 @@
+body.flex {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+nav.my-nav {
+    margin-bottom: 0;
+}
+
+nav.my-nav .container-fluid,
+nav.my-nav .container-fluid .navbar-collapse {
+    padding: 0;
+}
+
+div.data-container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+th.week-index,
+th.week-day {
+    text-align: center;
+    vertical-align: middle;
+}
+
+td.money {
+    text-align: right;
+    vertical-align: middle;
+}
+
+td.divide {
+    background-color: honeydew;
+}
+
+.monthplan_select {
+    background: #d0e9c6;
+}
+
+.cp_nav {
+    background-color: #222;
+    border-color: #080808;
+}
+
+.balance_1 {
+    background-color: #fbed50;
+}
+
+.balance_2 {
+    background-color: #f8b9b7;
+}
+
+.balance_3 {
+    background-color: #c4e3f3;
+}

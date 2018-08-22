@@ -1,0 +1,42 @@
+allprojects {
+    group 'com.hengyi.japp'
+    version '1.0'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://plugins.gradle.org/m2' }
+        maven { url 'https://jitpack.io' }
+    }
+
+    apply plugin: 'idea'
+    apply plugin: "maven"
+    apply plugin: 'maven-publish'
+}
+
+apply plugin: 'war'
+apply plugin: 'java'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+war {
+    archiveName 'netease.war'
+}
+
+dependencies {
+    compile "com.github.ixtf.japp:ee:${jappVersion}",
+            "com.github.ixtf.japp:poi:${jappVersion}",
+            "org.jasig.cas.client:cas-client-core:3.5.0",
+            "com.squareup.okhttp3:okhttp:3.9.0",
+            files('lib/com.netease.edu.cipher-util.jar'),
+            'commons-dbutils:commons-dbutils:1.6'
+
+    compileOnly "javax:javaee-api:7.0",
+            "org.jboss.resteasy:resteasy-multipart-provider:3.6.1.Final",
+            "org.hibernate:hibernate-validator:5.4.1.Final",
+            "org.eclipse.persistence:org.eclipse.persistence.jpa.modelgen.processor:2.7.0",
+            "org.projectlombok:lombok:${lombokVersion}"
+
+    testCompile group: 'junit', name: 'junit', version: '4.12',
+            "org.projectlombok:lombok:${lombokVersion}"
+}
